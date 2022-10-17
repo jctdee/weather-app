@@ -1,6 +1,5 @@
 function weatherContentCreator(value, isFahrenheit) {
   const weatherContainer = document.getElementById("weather-content-container");
-  console.log(value);
   resetHeader();
   backButtonCreator();
 
@@ -69,6 +68,7 @@ function weatherContentCreator(value, isFahrenheit) {
 
   function resetHeader() {
     const backBtn = document.getElementById("back-to-search-btn");
+    if (backBtn === null) return;
     weatherContainer.removeChild(backBtn);
     const h1 = document.querySelector("h1");
     if (h1 === null) return;

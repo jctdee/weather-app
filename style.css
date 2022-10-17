@@ -27,10 +27,16 @@ main {
 }
 
 .active {
-  /* display: block !important; */
   visibility: visible !important;
   opacity: 1;
   transition: all 1s ease-in-out;
+}
+
+.active-error {
+  visibility: visible !important;
+  opacity: 1;
+  transition: all 1s ease-in-out;
+  height: 50px;
 }
 
 .hidden {
@@ -40,17 +46,19 @@ main {
   max-width: 0;
 }
 
+.hidden-error {
+  visibility: hidden;
+  opacity: 0;
+  height: 50px;
+  max-width: 0;
+}
+
 form {
   width: 100%;
   height: 100%;
 }
 
 .search-box {
-  /* position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); */
-  /* display: none; */
   width: 300px;
   height: 50px;
   background: white;
@@ -80,11 +88,15 @@ input:focus {
   cursor: pointer;
 }
 
+#error-message {
+  color: red;
+}
+
 .weather-content {
   /* display: none; */
   position: relative;
   width: 60%;
-  height: 75%;
+  height: 50%;
   color: rgba(255, 255, 255, 0.8);
 }
 
@@ -97,6 +109,7 @@ h5 {
 
 #back-to-search-btn {
   position: absolute;
+  top: 25px;
   right: 0;
   cursor: pointer;
 }
@@ -170,4 +183,36 @@ h5 {
 .forecast-temperature-container img {
   width: 90px;
   height: 90px;
+}
+
+footer {
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  bottom: 25px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+@media (max-width: 900px) {
+  .weather-content {
+    height: 90%;
+  }
+
+  .other-container {
+    grid-template-columns: none;
+    grid-template-rows: repeat(3, 1fr);
+  }
+
+  #back-to-search-btn {
+    right: 46%;
+    top: -5%;
+  }
+
+  footer {
+    display: none;
+  }
 }

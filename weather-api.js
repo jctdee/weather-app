@@ -31,7 +31,7 @@ async function getWeatherData(place) {
   )
     .then((response) => {
       if (response.status === 400) {
-        throw new Error("City not found");
+        throw new Error("City cannot be found");
       } else {
         return response.json();
       }
@@ -39,5 +39,17 @@ async function getWeatherData(place) {
     .then((data) => (returnedData = data));
   return returnedData;
 }
+
+// async function getForecastData(place) {
+//   const geocode = await getGeolocation(place);
+//   // again, index 0 = latitude; index 1 = longitude;
+//   let returnedData = [];
+//   await fetch(
+//     `https://api.openweathermap.org/data/2.5/forecast/daily?lat=${geocode[0]}&lon=${geocode[1]}&appid=dcef71e1128c2f83dcabf8c95eea590c`,
+//     {
+//       mode: "cors",
+//     }
+//   ).then((response) => console.log(response.json()));
+// }
 
 export { getWeatherData };

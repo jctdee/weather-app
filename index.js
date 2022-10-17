@@ -40,7 +40,7 @@ document.getElementById("weather-form").addEventListener("submit", (event) => {
     } catch (err) {
       // IF ERROR 400 IS FOUND (BAD HEADERS), IT CATCHES THE ERROR HERE
       setInvalid();
-      errorMessage = "City not found";
+      errorMessage = "City cannot be found";
     }
   }
 
@@ -51,8 +51,10 @@ document.getElementById("weather-form").addEventListener("submit", (event) => {
     } else {
       await checkDataIfAvailable(cityValue);
       if (isValid) {
+        hideError();
         weatherContentCreator(weatherValue, isFahrenheit);
         showWeatherContent();
+        getForecastData(cityValue);
       } else {
         showError(errorMessage);
       }
@@ -64,7 +66,16 @@ document.getElementById("weather-form").addEventListener("submit", (event) => {
   }
 
   function showError(message) {
-    //
+    const errorElement = document.getElementById("error-message");
+    errorElement.textContent = errorMessage;
+    errorElement.classList.remove("hidden-error");
+    errorElement.classList.add("active-error");
+  }
+
+  function hideError() {
+    const errorElement = document.getElementById("error-message");
+    errorElement.classList.remove("active-error");
+    errorElement.classList.add("hidden-error");
   }
 
   finalDataValidation();
