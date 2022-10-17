@@ -1,7 +1,7 @@
 async function getGeolocation(place) {
   let locationArray = [];
   await fetch(
-    `http://api.openweathermap.org/geo/1.0/direct?q=${place}&appid=dcef71e1128c2f83dcabf8c95eea590c`,
+    `https://api.openweathermap.org/geo/1.0/direct?q=${place}&appid=dcef71e1128c2f83dcabf8c95eea590c`,
     {
       mode: "cors",
     }
