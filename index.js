@@ -54,7 +54,7 @@ document.getElementById("weather-form").addEventListener("submit", (event) => {
         hideError();
         weatherContentCreator(weatherValue, isFahrenheit);
         showWeatherContent();
-        getForecastData(cityValue);
+        // getForecastData(cityValue);
       } else {
         showError(errorMessage);
       }
