@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/11fc53aed0.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Montserrat"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Weather App</title>
+  </head>
+  <body>
+    <main>
+      <div class="search-box active" id="search-box-container">
+        <form action="#" id="weather-form">
+          <input
+            type="text"
+            name="city"
+            id="city"
+            placeholder="Search city..."
+          />
+          <button type="submit" id="search-button">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </form>
+      </div>
+      <div class="weather-content hidden" id="weather-content-container">
+        <i class="fa-solid fa-left-long fa-2x" id="back-to-search-btn"></i>
+        <!-- <h1>London</h1>
+        <h5>October 10 10:38 PM</h3>
+        <h2>61 °F</h2>
+        <div class="temperature-container">
+          <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="" />
+          <p>Clouds</p>
+          <p>overcast clouds</p>
+        </div> -->
+        <div class="other-container">
+          <div class="temperature-container">
+            <img src="./assets/thermometer.svg" alt="" />
+            <p>Feels Like</p>
+            <p id="feels-temperature"></p>
+          </div>
+          <div class="temperature-container">
+            <img src="./assets/water.svg" alt="" />
+            <p>Humidity</p>
+            <p id="humidity-percent"></p>
+          </div>
+          <div class="temperature-container">
+            <img src="./assets/wind.svg" alt="" />
+            <p>Wind Speed</p>
+            <p id="wind-speed"></p>
+          </div>
+        </div>
+        <div class="forecast-container">
+          <div class="forecast-temperature-container">
+            <h4>10/18</h4>
+            <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="" />
+            <p>61 °F</p>
+          </div>
+          <div class="forecast-temperature-container">
+            <h4>10/19</h4>
+            <img src="http://openweathermap.org/img/wn/11d@2x.png" alt="" />
+            <p>61 °F</p>
+          </div>
+          <div class="forecast-temperature-container">
+            <h4>10/20</h4>
+            <img src="http://openweathermap.org/img/wn/11d@2x.png" alt="" />
+            <p>61 °F</p>
+          </div>
+          <div class="forecast-temperature-container">
+            <h4>10/21</h4>
+            <img src="http://openweathermap.org/img/wn/13d@2x.png" alt="" />
+            <p>61 °F</p>
+          </div>
+          <div class="forecast-temperature-container">
+            <h4>10/22</h4>
+            <img src="http://openweathermap.org/img/wn/50d@2x.png" alt="" />
+            <p>61 °F</p>
+          </div>
+          <div class="forecast-temperature-container">
+            <h4>10/23</h4>
+            <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="" />
+            <p>61 °F</p>
+          </div>
+          <div class="forecast-temperature-container">
+            <h4>10/24</h4>
+            <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="" />
+            <p>61 °F</p>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="index.js" type="module"></script>
+  </body>
+</html>

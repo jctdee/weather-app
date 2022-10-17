@@ -1,0 +1,173 @@
+* {
+  box-sizing: border-box;
+  font-family: "Montserrat";
+}
+
+html {
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url(./assets/wallpaper.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.active {
+  /* display: block !important; */
+  visibility: visible !important;
+  opacity: 1;
+  transition: all 1s ease-in-out;
+}
+
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+  max-height: 0;
+  max-width: 0;
+}
+
+form {
+  width: 100%;
+  height: 100%;
+}
+
+.search-box {
+  /* position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); */
+  /* display: none; */
+  width: 300px;
+  height: 50px;
+  background: white;
+  border: 0;
+  border-radius: 15px;
+}
+
+input {
+  width: 90%;
+  padding-left: 10px;
+  height: 100%;
+  border: 0;
+  border-radius: 15px;
+}
+
+input:focus {
+  outline: none;
+}
+
+#search-button {
+  background: none;
+  padding: 0;
+  border: none;
+}
+
+#search-button:hover {
+  cursor: pointer;
+}
+
+.weather-content {
+  /* display: none; */
+  position: relative;
+  width: 60%;
+  height: 75%;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+h1,
+h2,
+h5 {
+  text-align: center;
+  margin-bottom: 0;
+}
+
+#back-to-search-btn {
+  position: absolute;
+  right: 0;
+  cursor: pointer;
+}
+
+.temperature-container {
+  display: grid;
+  grid-template-areas:
+    "left top"
+    "left sub";
+  gap: 5px;
+}
+
+.temperature-container img {
+  grid-area: left;
+  justify-self: end;
+}
+
+.temperature-container p:first-of-type {
+  grid-area: top;
+  margin-bottom: 0;
+  font-size: 1.5rem;
+}
+
+.temperature-container p:last-of-type {
+  grid-area: sub;
+  margin-top: 0;
+}
+
+.other-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.other-container .temperature-container img {
+  width: 60px;
+  height: 60px;
+  align-self: center;
+}
+
+.forecast-container {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.forecast-temperature-container {
+  margin-top: 50px;
+  display: grid;
+  grid-template-areas:
+    "date date"
+    "icon temp";
+}
+
+.forecast-temperature-container h4 {
+  grid-area: date;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.forecast-temperature-container img {
+  grid-area: icon;
+}
+
+.forecast-temperature-container p {
+  grid-area: temp;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+}
+
+.forecast-temperature-container img {
+  width: 90px;
+  height: 90px;
+}
