@@ -56,7 +56,22 @@ function weatherContentCreator(value, isFahrenheit) {
   windSpeed.textContent = `${value.wind.speed} km/h`;
   // END OF WIND SPEED HERE
 
+  // add listener here for temperature switching
+  weatherContainer.addEventListener("click", (event) => {
+    if (event.target && event.target.nodeName === "H2") toggleTemperature();
+  });
+
   // FUNCTIONS START HERE
+
+  function toggleTemperature() {
+    isFahrenheit = !isFahrenheit;
+    switchTemperature();
+  }
+
+  function switchTemperature() {
+    temperatureNow.textContent = temperatureCreator(value.main.temp);
+    feelsLike.textContent = temperatureCreator(value.main.feels_like);
+  }
 
   function backButtonCreator() {
     const btn = document.createElement("i");

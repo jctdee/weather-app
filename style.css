@@ -107,6 +107,10 @@ h5 {
   margin-bottom: 0;
 }
 
+h2:hover {
+  cursor: pointer;
+}
+
 #back-to-search-btn {
   position: absolute;
   top: 25px;
